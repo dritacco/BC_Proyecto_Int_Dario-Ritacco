@@ -1,0 +1,90 @@
+/* // Header */
+
+// Variables
+@use './mixin.scss' as M;
+@use './h-colors' as C;
+@use './h-fonts' as F;
+
+// Header
+.Header {
+    font-family: F.$headerFont;
+    background-color: C.$background;
+    .main__article {
+        font-weight: 700;
+        font-size: 20px;
+    }
+    .banner__article {
+        background-color: C.$colorBlack;
+        color: C.$background;
+        padding: 1rem;
+        font-size: 11px;
+    }
+
+    .article__top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .top__icon {
+            display: flex;
+            align-items: center;
+            img {
+                margin-left: 15px;
+            }
+        }
+    }
+    .shop__icon {
+        cursor: pointer;
+    }
+}
+
+// Estilos Mobile
+@include M.medias(mobile) {
+    .Header {
+        .main__article {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            .article__navbar {
+                display: flex;
+            }
+        }
+    }
+}
+
+// Estilos Tablet
+@include M.medias(tablet) {
+    .Header {
+        .main__article {
+            .article__navbar {
+                .nav__list{
+                    display: flex;
+                    align-items: center;
+                    width: 300px;
+                    justify-content: space-between;
+                }
+            }
+            .shop__icon {
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+// Estilos Desktop
+@include M.medias(desktop) {
+    .Header {
+        .shop__icon {
+            img {
+            height: 30px;
+            width: 30px;
+            }
+        }
+        .main__article {
+            .article__navbar {
+                .nav__list{
+                    width: 450px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,111 @@
+// Estilos para alta.html
+
+// Variables
+@use './mixin.scss' as M;
+@use './h-colors' as C;
+@use './h-fonts' as F;
+
+.main__alta {
+    padding: 20px;
+    font-family: F.$mainFont;
+    background-color: C.$background;
+    p {
+        color: C.$colorGrey;
+    }
+
+    .error {
+        text-align: left;
+        padding-top: 10px;
+    }
+
+
+    @include M.medias(mobile) {
+        .alta__section {
+            .section__title {
+                p {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .section__form {
+
+                .form__box {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+
+                    label {
+                        font-size: 13px;
+                        font-weight: 700;
+                        display: block;
+                        margin-bottom: 5px;
+                        text-align: left;
+                    }
+
+                    input,select {
+                        background: C.$background;
+                        border: 1px solid C.$colorGrey;
+                        border-radius: 3px;
+                        box-sizing: border-box;
+                        color: C.$colorGrey;
+                        font-size: 13px;
+                        padding: 11px 15px;
+                        line-height: 16px;
+                        height: 40px;
+                    }
+
+                    .box__buttom {
+                            margin-top: 20px;
+                            background-color: C.$colorGrey;
+                            border: none;
+                            border-radius: 3px;
+                            color: C.$background;
+                            font-size: 13px;
+                            font-weight: 700;
+                            padding: 11px 15px;
+                            line-height: 16px;
+                            height: 40px;
+                            cursor: pointer;
+                            transition: all 0.3s ease-in-out;
+                            width: 95px;
+
+                            &:hover {
+                                background-color: C.$colorBlack;
+                            }
+                        
+                    }
+                }
+            }
+        }
+
+    }
+
+    @include M.medias(tablet) {
+        padding-left: 10%;
+        padding-right: 10%;
+
+    }
+
+    @include M.medias(desktop) {
+         
+            .alta__section {
+                display: flex;
+
+                .section__title {
+                    margin-right: 50px;
+                    margin-top: 100px;
+                    p {
+                        color: C.$colorGrey;
+                    }
+                }
+
+                .section__form {
+                    width: 60%;
+                }
+             }
+
+
+    }
+
+
+}

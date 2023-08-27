@@ -1,0 +1,5 @@
+@use './h-colors' as C;
+
+html {
+    background-color: C.$fBackgound;
+}

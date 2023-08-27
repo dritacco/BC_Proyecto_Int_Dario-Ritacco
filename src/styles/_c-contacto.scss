@@ -1,0 +1,126 @@
+// Estilos para contacto.html
+
+// Variables
+@use './mixin.scss' as M;
+@use './h-colors' as C;
+@use './h-fonts' as F;
+
+.main__contacto {
+    padding: 20px;
+    font-family: F.$mainFont;
+    background-color: C.$background;
+    p {
+        color: C.$colorGrey;
+    }
+
+    .error {
+        text-align: left;
+    }
+
+
+    @include M.medias(mobile) {
+        .main__section {
+                p {
+                    margin-bottom: 20px;
+                }
+
+            .section__form {
+
+                .form__box {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+
+                    label {
+                        font-size: 13px;
+                        font-weight: 700;
+                        display: block;
+                        margin-bottom: 5px;
+                        text-align: left;
+                    }
+
+                    input {
+                        background: C.$background;
+                        border: 1px solid C.$colorGrey;
+                        border-radius: 3px;
+                        box-sizing: border-box;
+                        color: C.$colorGrey;
+                        font-size: 13px;
+                        padding: 11px 15px;
+                        line-height: 16px;
+                        height: 40px;
+                    }
+                    // estilo para el textarea
+                    textarea {
+                        background: C.$background;
+                        border: 1px solid C.$colorGrey;
+                        border-radius: 3px;
+                        box-sizing: border-box;
+                        color: C.$colorGrey;
+                        font-size: 13px;
+                        padding: 11px 15px;
+                        line-height: 16px;
+                        height: 100px;
+                    }
+
+                }
+                .form__input-buttom {
+                    margin-top: 20px;
+                    background-color: C.$colorGrey;
+                    border: none;
+                    border-radius: 3px;
+                    color: C.$background;
+                    font-size: 13px;
+                    font-weight: 700;
+                    padding: 11px 15px;
+                    line-height: 16px;
+                    height: 40px;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    width: 95px;
+
+                    &:hover {
+                        background-color: C.$colorBlack;
+                    }
+                
+            }
+            }
+        }
+
+    }
+
+    @include M.medias(tablet) {
+        padding-left: 10%;
+        padding-right: 10%;
+
+    }
+
+    @include M.medias(desktop) {
+
+        .main__section {
+            display: flex;
+
+
+                .section__titleA {
+                    margin-right: 20%;
+                    
+                    p{
+                        margin-left: 50px;
+                        margin-top: 50px;
+                        
+                    }
+
+                }
+
+                .section__titleB {
+                    margin-top: 70px;
+
+                }
+        }
+
+
+
+    }
+
+
+}

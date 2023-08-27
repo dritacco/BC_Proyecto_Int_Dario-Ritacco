@@ -1,0 +1,82 @@
+// Main del index
+
+// Variables
+@use './mixin.scss' as M;
+@use './h-colors' as C;
+@use './h-fonts' as F;
+
+
+
+// Main
+.Main {
+    padding: 20px;
+    background-color: C.$background;
+
+// Estilos para mobile
+    @include M.medias(mobile) {
+
+        .article__h1 {
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .main__product{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            font-family: F.$mainFont;
+
+            .product__article-m {
+                margin-left: 10px;
+
+                p {
+                    margin-top: 5px;
+                }
+            }
+
+            .product__article-f {
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+                text-decoration:underline;
+                font-weight: bold;
+                cursor: pointer;
+                margin-bottom: 20px;
+            }
+
+            img{
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+        }
+    }
+// Estilos para tablet
+    @include M.medias(tablet) {
+
+        .article__h1 {
+            font-size: 36px;
+
+        }
+        .main__product{
+            grid-template-columns: 1fr 1fr;
+
+        }
+
+    }
+// Estilos para desktop
+    @include M.medias(desktop) {
+
+        .main__product{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2rem;
+            padding: 20px;
+
+            .product__article {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

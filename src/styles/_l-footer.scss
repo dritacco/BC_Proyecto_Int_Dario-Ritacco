@@ -1,0 +1,206 @@
+/* // Footer */
+
+// Variables
+@use './mixin.scss' as M;
+@use './h-colors' as C;
+@use './h-fonts' as F;
+
+// Footer
+.Footer{
+    font-family: F.$footerFont;
+    width: 100%;
+    background-color: C.$fBackgound;
+    color: C.$fColor;
+
+    .footer__form {
+        background-color: C.$fSusBackgound;
+    }
+}
+
+// Estilos Mobile
+@include M.medias(mobile) {
+    footer{
+        height: auto;
+
+        .footer__form{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 10px 20px;
+
+            .form__title{
+                text-align: center;
+                font-size: 20px;
+                font-weight: 600;
+                padding: 5px 20px;
+                margin: 10px;
+            }
+
+            .form__input{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                margin: 5px;
+
+                .form__input-text{
+                    border: 3px solid  C.$fColor;
+                    color: C.$colorGrey;
+                    width: 100%;
+                    height: 40px;
+                    background-color: white;
+                    padding: 5px;
+                    font-size: 20px;
+                    font-weight: 400;
+                }
+    
+                .form__input-buttom{
+                    border: 1px solid  C.$fColor;
+                    text-align: center;
+                    height: 40px;
+                    width: 100%;
+                    margin: 5px;
+                    cursor: pointer;
+                }
+                //hover para el boton
+                .form__input-buttom:hover{
+                    background-color: C.$fColor;
+                    color: C.$background;
+                }
+            }
+        }
+
+        .footer__contact{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            font-size: 20px;
+            font-weight: 600;
+            padding: 5px 20px;
+    
+            border-bottom: solid 1px C.$fColor;
+            margin: 10px;
+        }
+
+        .footer__follow{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            font-size: 20px;
+            font-weight: 600;
+            padding: 5px 20px;
+    
+            border-bottom: solid 1px C.$fColor;
+            margin: 10px;
+            
+
+            .logo__fb {
+                margin-left: 20px;
+            }
+        }
+
+        .footer__brand {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+
+            .brand__copy {
+                margin: 10px 0 10px 0;
+            }
+
+            .footer__brand-refer {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+    
+                    .brand__cace {
+                        margin: 5px;
+                    }
+                    .brand__afip {
+                        margin: 5px;
+                    }
+                    .brand__cruce {
+                        margin: 5px;
+                    }
+                    .brand__vtex {
+                        margin: 5px;
+                    }
+
+            }
+
+        }
+
+    }
+}
+
+// Estilos Tablet
+@include M.medias(tablet) {
+    .form__input-text {
+        text-align: center;
+    }
+
+}
+
+// Estilos Desktop
+@include M.medias(desktop) {
+    footer{
+        .footer__form {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+
+            .form__input {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                margin: 5px;
+                margin-right: 20px;
+    
+                .form__input-buttom{
+                    width: 30%;
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        .footer__box {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+
+            .follow__p {
+                margin-bottom: 10px;
+            }
+
+            .footer__contact {
+                width: 20%;
+                margin: 10px;
+            }
+
+            .footer__follow {
+                display: flex;
+                flex-direction: column;
+                width: 20%;
+            }
+        }
+
+        .footer__brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .footer__brand-logo{
+                display: flex;
+
+                .brand__copy {
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+}

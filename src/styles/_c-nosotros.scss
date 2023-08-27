@@ -1,0 +1,111 @@
+// Estilos para nosotros.html
+
+// Variables
+@use './mixin.scss' as M;
+@use './h-colors' as C;
+@use './h-fonts' as F;
+
+.main__nosotros {
+    font-family: F.$mainFont;
+    background-color: C.$background;
+    padding: 20px;
+
+    @include M.medias(mobile) {
+
+        img {
+            width: 100%;
+            margin-bottom: 20px;
+            height: 200px;
+            object-fit:none;
+        }
+
+        p {
+            text-align: justify; 
+            margin-bottom: 20px;
+        }
+
+        .presentation__title {
+            margin-bottom: 20px;
+            text-align: center;       
+        }
+
+        .card__map {
+            text-align: center;
+            .map__title {
+                margin-bottom: 20px;
+            }
+        }
+
+        .nosotros__card {
+            margin-bottom: 40px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 200px;
+        }
+
+
+
+    }
+ 
+
+    @include M.medias(tablet) {
+        img {
+            height: 400px;
+        }
+
+        .nosotros__card {
+            font-size: 1.2rem;
+
+            iframe {
+                width: 500px;
+                height: 400px;
+            }
+        }
+
+
+    }
+
+    @include M.medias(desktop) {
+
+        img {
+            height: 600px;
+        }
+
+        .nosotros__card {
+            display: flex;
+            padding: 20px;
+            font-size: 1.4rem;
+
+
+
+            .card__presentation {
+                //tamao letra
+                width: 40%;
+                text-align: justify;
+            }
+
+            .card__map {
+                margin-top: 40px;
+                width: 60%;
+                text-align: center;
+                .map__title {
+                    margin-bottom: 20px;
+                }
+                iframe {
+                    width: 500px;
+                    height: 400px;
+                }
+
+
+            }
+            
+        }
+
+
+
+
+    }
+
+}
